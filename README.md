@@ -1,8 +1,8 @@
 # zerobounce-dotnet-api
-This is a .Net wrapper class example for the ZeroBounce API.<br>
+This is a .Net wrapper class example for the ZeroBounce API.<br><br>
 The <b><i>ValidateEmail</b></i> and <b><i>GetCredit</b></i> methods return objects from which you can retrieve properties that return the relevant information.<br>
 
-Properties and possible values returned by:
+**Properties and possible values returned by:**
 1. <b><i>ValidateEmail</b></i> method
   
 |<b>Property</b>|<b>Possible Values</b> 
@@ -27,7 +27,7 @@ processedat |The UTC time the email was validated.
 |:--- |:--- 
 credits  | The number of credits left in account for email validation.
 
-Any of the following email addresses can be used for testing the API:
+**Any of the following email addresses can be used for testing the API, no credits are charge for these test email addresses:**
 + disposable@example.com
 + invalid@example.com
 + valid@example.com
@@ -62,14 +62,29 @@ Any of the following email addresses can be used for testing the API:
  var zeroBounceAPI = new ZeroBounce.ZeroBounceAPI();
 //set input parameters
 
-zeroBounceAPI.apiKey = "Your API Key";
-zeroBounceAPI.emailToValidate = "Your Email Address";
-zeroBounceAPI.ipAddress = "Your IP address";
+zeroBounceAPI.apiKey = "Your API Key"; //Required
+zeroBounceAPI.emailToValidate = "Email address your validating"; //Required
+zeroBounceAPI.ipAddress = "IP address the email signed up with"; //Optional
 zeroBounceAPI.readTimeOut = 200000;// "Any integer value in milliseconds
 zeroBounceAPI.requestTimeOut = 150000; // "Any integer value in milliseconds
 
 // validate email and assign results to an object
 var apiProperties = zeroBounceAPI.ValidateEmail();
+
 // check credits and assign results to an object
 var apiCredits= zeroBounceAPI.GetCredits();
+
+//Use the Properties to make decisions on
+switch (apiProperties.status)
+  {
+      case "Invalid":
+          Console.WriteLine("Invalid");
+          break;
+      case "Valid":
+          Console.WriteLine("Valid");
+          break;
+      default:
+          Console.WriteLine(apiProperties.status);
+          break;
+  }
 ```
