@@ -3,17 +3,19 @@ This is a .Net wrapper class example for the ZeroBounce API.<br>
 The <b><i>ValidateEmail</b></i> and <b><i>GetCredit</b></i> methods return objects from which you can retrieve properties that return the relevant information.<br>
 <br>
 <b>Example usage:<br></b>
-<pre>
-var zeroBounceAPI = new ZeroBounce.ZeroBounceAPI();<br>
-// set input parameters;<br>
-zeroBounceAPI.apiKey =  "Your API Key";<br>
-zeroBounceAPI.emailToValidate = "Your Email Address";      <br> 
-zeroBounceAPI.ipAddress = "Your IP address";<br>
-zeroBounceAPI.readTimeOut = 200000;// "Any integer value in milliseconds;<br>
-zeroBounceAPI.requestTimeOut = 150000; // "Any integer value in milliseconds;<br>
+```C#
+var zeroBounceAPI = new ZeroBounce.ZeroBounceAPI();
 
-// validate email and assign results to an object<br>
-var apiProperties = zeroBounceAPI.ValidateEmail();<br>
-// check credits and assign results to an object<br>
+//set input parameters
+
+zeroBounceAPI.apiKey = "Your API Key";
+zeroBounceAPI.emailToValidate = "Your Email Address";
+zeroBounceAPI.ipAddress = "Your IP address";
+zeroBounceAPI.readTimeOut = 200000;// "Any integer value in milliseconds
+zeroBounceAPI.requestTimeOut = 150000; // "Any integer value in milliseconds
+
+// validate email and assign results to an object
+var apiProperties = zeroBounceAPI.ValidateEmail();
+// check credits and assign results to an object
 var apiCredits= zeroBounceAPI.GetCredits();
-</pre>
+```
