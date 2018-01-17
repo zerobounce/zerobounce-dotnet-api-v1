@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Zerbounce.TestClient")]
+[assembly: AssemblyTitle("ZeroBounce.TestClient")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Toshiba")]
-[assembly: AssemblyProduct("Zerbounce.TestClient")]
-[assembly: AssemblyCopyright("Copyright © Toshiba 2017")]
+[assembly: AssemblyCompany("ZeroBounce")]
+[assembly: AssemblyProduct("ZeroBounce.TestClient")]
+[assembly: AssemblyCopyright("Copyright © ZeroBounce 2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
