@@ -74,7 +74,7 @@ var apiProperties = zeroBounceAPI.ValidateEmail();
 // check credits and assign results to an object
 var apiCredits= zeroBounceAPI.GetCredits();
 
-//Use the Properties to make decisions on
+//use the properties to make decisions on
 switch (apiProperties.status)
   {
       case "Invalid":
