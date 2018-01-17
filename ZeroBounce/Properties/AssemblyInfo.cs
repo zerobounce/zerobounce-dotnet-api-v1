@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("ZeroBounce")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Toshiba")]
+[assembly: AssemblyCompany("ZeroBounce")]
 [assembly: AssemblyProduct("ZeroBounce")]
-[assembly: AssemblyCopyright("Copyright © Toshiba 2017")]
+[assembly: AssemblyCopyright("Copyright © ZeroBounce 2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
