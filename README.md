@@ -98,7 +98,7 @@ zeroBounceAPI.apiKey = "Your API Key" 'Required
 zeroBounceAPI.emailToValidate = "Email address your validating" 'Required
 zeroBounceAPI.ipAddress = "IP address the email signed up with" 'Optional
 zeroBounceAPI.readTimeOut = 200000 'Any integer value in milliseconds
-zeroBounceAPI.requestTimeOut = 150000
+zeroBounceAPI.requestTimeOut = 150000 'Any integer value in milliseconds
 
 Dim apiProperties = zeroBounceAPI.ValidateEmail
 Dim apiCredits = zeroBounceAPI.GetCredits
