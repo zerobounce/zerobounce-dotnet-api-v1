@@ -1,5 +1,5 @@
 # zerobounce-dotnet-api
-This is a .Net wrapper class example for the ZeroBounce API.
+This is a .Net wrapper class example for the ZeroBounce API.<br>
 The ValidateEmail and GetCredit methods return objects from which you can retrieve properties that return the relevant information.<br>
 <br>
 <b>Example usage:<br></b>
