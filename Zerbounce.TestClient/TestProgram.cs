@@ -11,7 +11,6 @@ namespace Zerbounce.TestClient
     {
         static void Main(string[] args)
         {
-
             var zeroBounceAPI = new ZeroBounce.ZeroBounceAPI();
             zeroBounceAPI.ApiKey =  "Your API Key";
             zeroBounceAPI.EmailToValidate =  "Your Email Address";       
