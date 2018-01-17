@@ -27,7 +27,7 @@ processedat |The UTC time the email was validated.
 |:--- |:--- 
 credits  | The number of credits left in account for email validation.
 
-**Any of the following email addresses can be used for testing the API, no credits are charge for these test email addresses:**
+**Any of the following email addresses can be used for testing the API, no credits are charged for these test email addresses:**
 + disposable@example.com
 + invalid@example.com
 + valid@example.com
