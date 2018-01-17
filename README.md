@@ -90,7 +90,7 @@ switch (apiProperties.status)
 ```
 <b>VB Example usage:<br></b>
 
-```VB
+```vbnet
 Dim zeroBounceAPI = New ZeroBounce.ZeroBounceAPI
 
 'set input parameters
