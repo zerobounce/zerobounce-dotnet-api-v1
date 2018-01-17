@@ -15,7 +15,7 @@ namespace Zerbounce.TestClient
             var zeroBounceAPI = new ZeroBounce.ZeroBounceAPI();
             zeroBounceAPI.ApiKey =  "Your API Key";
             zeroBounceAPI.EmailToValidate =  "Your Email Address";       
-            zeroBounceAPI.IpAddress = "Your IP address";;
+            zeroBounceAPI.IpAddress = "Your IP address";
             zeroBounceAPI.ReadTimeOut = 200000;// "Any integer value in milliseconds;
             zeroBounceAPI.RequestTimeOut = 150000; // "Any integer value in milliseconds;
 
