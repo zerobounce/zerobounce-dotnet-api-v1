@@ -2,10 +2,6 @@
 This is a .Net wrapper class example for the ZeroBounce API.<br>
 The <b><i>ValidateEmail</b></i> and <b><i>GetCredit</b></i> methods return objects from which you can retrieve properties that return the relevant information.<br>
 <br>
-|Property | Value |
---- | --- | ---
-*Still* | `renders` 
-1 | 2 
 
 <b>Example usage:<br></b>
 ```C#
