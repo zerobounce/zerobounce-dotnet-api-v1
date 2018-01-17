@@ -5,10 +5,7 @@ VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZeroBounce", "ZeroBounce\ZeroBounce.csproj", "{EAF5F041-99F7-4BD3-A394-4C1ABEB4FCC9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZeroBounce.TestClient", "Zerbounce.TestClient\ZeroBounce.TestClient.csproj", "{F9F7E108-4391-431A-A3E5-59B0BA58409A}"
-	ProjectSection(ProjectDependencies) = postProject
-		{EAF5F041-99F7-4BD3-A394-4C1ABEB4FCC9} = {EAF5F041-99F7-4BD3-A394-4C1ABEB4FCC9}
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZeroBounce.TestClient", "ZeroBounce.TestClient\ZeroBounce.TestClient.csproj", "{F9F7E108-4391-431A-A3E5-59B0BA58409A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
