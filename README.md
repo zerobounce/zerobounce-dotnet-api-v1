@@ -1,7 +1,7 @@
 # zerobounce-dotnet-api
 This is a .Net wrapper class example for the ZeroBounce API.<br>
 The <b><i>ValidateEmail</b></i> and <b><i>GetCredit</b></i> methods return objects from which you can retrieve properties that return the relevant information.<br>
-<br>
+
 Properties and possible values returned by:
 1. <b><i>ValidateEmail</b></i> method
   
@@ -58,8 +58,8 @@ Any of the following email addresses can be used for testing the API:
 + unroutable_ip_address@example.com
 
 <b>Example usage:<br></b>
-```C#lastname |ZeroBounceAPI();
-
+```C#
+ var zeroBounceAPI = new ZeroBounce.ZeroBounceAPI();
 //set input parameters
 
 zeroBounceAPI.apiKey = "Your API Key";
