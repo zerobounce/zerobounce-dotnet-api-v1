@@ -57,21 +57,21 @@ credits  | The number of credits left in account for email validation.
 + timeout_exceeded@example.com
 + unroutable_ip_address@example.com
 
-<b>Example usage:<br></b>
+<b>C# Example usage:<br></b>
 ```C#
  var zeroBounceAPI = new ZeroBounce.ZeroBounceAPI();
-//set input parameters
 
+//set input parameters
 zeroBounceAPI.apiKey = "Your API Key"; //Required
 zeroBounceAPI.emailToValidate = "Email address your validating"; //Required
 zeroBounceAPI.ipAddress = "IP address the email signed up with"; //Optional
 zeroBounceAPI.readTimeOut = 200000;// "Any integer value in milliseconds
 zeroBounceAPI.requestTimeOut = 150000; // "Any integer value in milliseconds
 
-// validate email and assign results to an object
+//validate email and assign results to an object
 var apiProperties = zeroBounceAPI.ValidateEmail();
 
-// check credits and assign results to an object
+//check credits and assign results to an object
 var apiCredits= zeroBounceAPI.GetCredits();
 
 //use the properties to make decisions on
@@ -87,4 +87,29 @@ switch (apiProperties.status)
           Console.WriteLine(apiProperties.status);
           break;
   }
+```
+<b>VB Example usage:<br></b>
+
+```VB
+Dim zeroBounceAPI = New ZeroBounce.ZeroBounceAPI
+
+'set input parameters
+zeroBounceAPI.apiKey = "Your API Key" 'Required 
+zeroBounceAPI.emailToValidate = "Email address your validating" 'Required
+zeroBounceAPI.ipAddress = "IP address the email signed up with" 'Optional
+zeroBounceAPI.readTimeOut = 200000 'Any integer value in milliseconds
+zeroBounceAPI.requestTimeOut = 150000
+
+Dim apiProperties = zeroBounceAPI.ValidateEmail
+Dim apiCredits = zeroBounceAPI.GetCredits
+
+'use the properties to make decisions on
+Select Case (apiProperties.status)
+    Case "Invalid"
+        Console.WriteLine("Invalid")
+    Case "Valid"
+        Console.WriteLine("Valid")
+    Case Else
+        Console.WriteLine(apiProperties.status)
+End Select
 ```
