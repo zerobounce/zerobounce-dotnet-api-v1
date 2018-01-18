@@ -91,15 +91,14 @@ namespace ZeroBounce
         public ZeroBounceResultsModel ValidateEmail()
         {
             // secure SSL / TLS channel for different .Net versions
-            ServicePointManager.SecurityProtocol |= SecurityProtocolType.Ssl3;
             ServicePointManager.SecurityProtocol |= SecurityProtocolType.Tls;
             ServicePointManager.SecurityProtocol |= SecurityProtocolType.Tls11;
             ServicePointManager.SecurityProtocol |= SecurityProtocolType.Tls12;
 
             var apiUrl = "";
 
-            if (IpAddress == "") apiUrl = "https://api.zerobounce.net/v1/validate?apikey=" + System.Net.WebUtility.UrlEncode(ApiKey) + "&email=" + System.Net.WebUtility.UrlEncode(EmailToValidate);
-            else apiUrl = "https://api.zerobounce.net/v1/validatewithip?apikey=" + System.Net.WebUtility.UrlEncode(ApiKey) + "&email=" + System.Net.WebUtility.UrlEncode(EmailToValidate) + "&ipaddress=" + System.Net.WebUtility.UrlEncode(IpAddress);
+            if (IpAddress == "") apiUrl = "https://api.zerobounce.net/v1/validate?apikey=" + ApiKey + "&email=" + System.Net.WebUtility.UrlEncode(EmailToValidate);
+            else apiUrl = "https://api.zerobounce.net/v1/validatewithip?apikey=" + ApiKey + "&email=" + System.Net.WebUtility.UrlEncode(EmailToValidate) + "&ipaddress=" + System.Net.WebUtility.UrlEncode(IpAddress);
 
             var responseString = "";
             var oResults = new ZeroBounceResultsModel();
@@ -123,6 +122,13 @@ namespace ZeroBounce
             }
             catch(Exception ex)
             {
+                if (ex.Message.Contains("The operation has timed out")) oResults.subStatus = "timeout_exceeded";
+                else oResults.subStatus = "exception_occurred";
+                oResults.status = "Unknown";
+                oResults.domain = EmailToValidate.Substring(EmailToValidate.IndexOf("@") + 1).ToLower();
+                oResults.account = EmailToValidate.Substring(0, EmailToValidate.IndexOf("@")).ToLower();
+                oResults.address = EmailToValidate.ToLower();
+
                 Console.WriteLine(ex.ToString());
                 oResults.errMsg = ex.ToString();
             }
@@ -130,8 +136,7 @@ namespace ZeroBounce
         }
         public ZeroBounceCreditsModel GetCredits()
         {
-            // secure SSL / TLS channel for different .Net versions
-            ServicePointManager.SecurityProtocol |= SecurityProtocolType.Ssl3;
+            // secure SSL / TLS channel for different .Net versions            
             ServicePointManager.SecurityProtocol |= SecurityProtocolType.Tls;
             ServicePointManager.SecurityProtocol |= SecurityProtocolType.Tls11;
             ServicePointManager.SecurityProtocol |= SecurityProtocolType.Tls12;
