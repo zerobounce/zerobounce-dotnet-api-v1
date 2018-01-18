@@ -65,6 +65,11 @@ credits  | The number of credits left in account for email validation.
 zeroBounceAPI.apiKey = "Your API Key"; //Required
 zeroBounceAPI.emailToValidate = "Email address your validating"; //Required
 zeroBounceAPI.ipAddress = "IP address the email signed up with"; //Optional
+
+//Depending on how you use the API, you might want it to time out faster, for example on a registration screen. 
+//Normally the API will return results very fast, but a small percentage of mail servers take upwards of 20+ seconds to respond. 
+//If the API times out, it will return a status of "Unknown" and a sub_status of "timeout_exceeded"  
+
 zeroBounceAPI.readTimeOut = 200000;// "Any integer value in milliseconds
 zeroBounceAPI.requestTimeOut = 150000; // "Any integer value in milliseconds
 
@@ -97,8 +102,14 @@ Dim zeroBounceAPI = New ZeroBounce.ZeroBounceAPI
 zeroBounceAPI.apiKey = "Your API Key" 'Required 
 zeroBounceAPI.emailToValidate = "Email address your validating" 'Required
 zeroBounceAPI.ipAddress = "IP address the email signed up with" 'Optional
+
+'Depending on how you use the API, you might want it to time out faster, for example on a registration screen. 
+'Normally the API will return results very fast, but a small percentage of mail servers take upwards of 20+ seconds to respond. 
+'If the API times out, it will return a status of "Unknown" and a sub_status of "timeout_exceeded"  
+
 zeroBounceAPI.readTimeOut = 200000 'Any integer value in milliseconds
-zeroBounceAPI.requestTimeOut = 150000 'Any integer value in milliseconds
+zeroBounceAPI.requestTimeOut = 150000 'Any integer value in milliseconds 
+
 
 Dim apiProperties = zeroBounceAPI.ValidateEmail
 Dim apiCredits = zeroBounceAPI.GetCredits
