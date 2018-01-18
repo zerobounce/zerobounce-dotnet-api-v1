@@ -57,6 +57,10 @@ credits  | The number of credits left in account for email validation.
 + timeout_exceeded@example.com
 + unroutable_ip_address@example.com
 
+**You can this IP to test the GEO Location in the API.**
+
++ 99.110.204.1
+
 <b>C# Example usage:<br></b>
 ```C#
  var zeroBounceAPI = new ZeroBounce.ZeroBounceAPI();
