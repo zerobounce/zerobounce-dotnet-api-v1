@@ -141,7 +141,7 @@ namespace ZeroBounce
             ServicePointManager.SecurityProtocol |= SecurityProtocolType.Tls11;
             ServicePointManager.SecurityProtocol |= SecurityProtocolType.Tls12;
 
-            var apiUrl = "https://api.zerobounce.net/v1/getcredits?apikey=" + System.Net.WebUtility.UrlEncode(ApiKey);
+            var apiUrl = "https://api.zerobounce.net/v1/getcredits?apikey=" + ApiKey;
             var responseString = "";
             var oResults = new ZeroBounceCreditsModel();
 
