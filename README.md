@@ -2,6 +2,8 @@
 This is a .Net wrapper class example for the ZeroBounce API.<br><br>
 The <b><i>ValidateEmail</b></i> and <b><i>GetCredit</b></i> methods return objects from which you can retrieve properties that return the relevant information.<br>
 
+You can also easily consume and keep it updated within your Visual Studio Project with Nuget Package Manager:[ https://www.nuget.org/packages/ZeroBounceAPIWrapper/]( https://www.nuget.org/packages/ZeroBounceAPIWrapper/)
+
 **Properties and possible values returned by:**
 1. <b><i>ValidateEmail</b></i> method
   
