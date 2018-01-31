@@ -1,11 +1,21 @@
 # zerobounce-dotnet-api
 This is a .Net wrapper class example for the ZeroBounce API.<br><br>
+The .NET API Wrapper takes these input parameters.
+
+|<b>Property</b>|<b>Values</b> 
+|:--- |:--- 
+apiKey  | Located in your account. 
+emailToValidate | The email address your validating. 
+ipAddress | [optional] - The IP Address the email address was captured from 
+requestTimeOut | [optional] Timeout settings in seconds, setting this enables you to control how long you are willing to wait for to send the request to the API. When the timeout occurs an "Unknown" result is returned. 
+readTimeOut | [optional] Timeout settings in seconds, setting this enables you to control how long your willing to wait for the API to respond to your request. When the timeout occurs an "Unknown" result is returned.
+
 The <b><i>ValidateEmail</b></i> and <b><i>GetCredit</b></i> methods return objects from which you can retrieve properties that return the relevant information.<br>
 
 You can also easily consume and keep it updated within your Visual Studio Project with Nuget Package Manager:[ https://www.nuget.org/packages/ZeroBounceAPIWrapper/]( https://www.nuget.org/packages/ZeroBounceAPIWrapper/)
 
 **Properties and possible values returned by:**
-1. <b><i>ValidateEmail</b></i> method
+<b><i>ValidateEmail</b></i> method
   
 |<b>Property</b>|<b>Possible Values</b> 
 |:--- |:--- 
@@ -27,7 +37,16 @@ city| The city of the IP passed in or [null].
 zipcode| The zipcode of the IP passed in or [null]
 processedat |The UTC time the email was validated.
 
-2. <b><i>GetCredit</b></i> method
+<b><i>These additional properties are available when you set the ipAddress property.</b></i> method
+
+|<b>Property</b>|<b>Possible Values</b> 
+|:--- |:--- 
+country  | The country the IP address is from. 
+region | The state/region the IP address is from.
+city | The city the IP address is from.
+zipcode | The Zip Code the IP address is from. 
+
+<b><i>GetCredit</b></i> method
   
 |<b>Property</b>|<b>Possible Values</b> 
 |:--- |:--- 
@@ -110,17 +129,17 @@ switch (apiProperties.status)
 Dim zeroBounceAPI = New ZeroBounce.ZeroBounceAPI
 
 'set input parameters
-zeroBounceAPI.apiKey = "Your API Key" 'Required 
-zeroBounceAPI.emailToValidate = "Email address your validating" 'Required
-zeroBounceAPI.ipAddress = "IP address the email signed up with" 'Optional
+zeroBounceAPI.apiKey = "Your API Key" '[Required] 
+zeroBounceAPI.emailToValidate = "Email address your validating" '[Required] 
+zeroBounceAPI.ipAddress = "IP address the email signed up with" '[Optional]
 
 'Depending on how you use the API, you might want it to time out faster, for example on a registration screen. 
 'Normally the API will return results very fast, but a small percentage of mail servers 
 'take upwards of 20+ seconds to respond. 
 'If the API times out, it will return a status of "Unknown" and a sub_status of "timeout_exceeded"  
 
-zeroBounceAPI.readTimeOut = 200000 'Any integer value in milliseconds
-zeroBounceAPI.requestTimeOut = 150000 'Any integer value in milliseconds 
+zeroBounceAPI.readTimeOut = 200000 '[Optional] Any integer value in milliseconds 
+zeroBounceAPI.requestTimeOut = 150000 '[Optional] Any integer value in milliseconds 
 
 
 Dim apiProperties = zeroBounceAPI.ValidateEmail
