@@ -21,6 +21,10 @@ lastname  |The last name of the owner of the email when available or [null].
 gender |The gender of the owner of the email when available or [null].
 creation date |The creation date of the email when available or [null].
 location|The location of the owner of the email when available or [null].
+country| The country of the IP passed in or [null].
+region| The region of the IP passed in or [null].
+city| The city of the IP passed in or [null].
+zipcode| The zipcode of the IP passed in or [null]
 processedat |The UTC time the email was validated.
 
 2. <b><i>GetCredit</b></i> method
