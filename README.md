@@ -2,6 +2,8 @@
 This is a .Net wrapper class example for the ZeroBounce API.<br><br>
 The <b><i>ValidateEmail</b></i> and <b><i>GetCredit</b></i> methods return objects from which you can retrieve properties that return the relevant information.<br>
 
+You can also easily consume and keep it updated within your Visual Studio Project with Nuget Package Manager:[ https://www.nuget.org/packages/ZeroBounceAPIWrapper/]( https://www.nuget.org/packages/ZeroBounceAPIWrapper/)
+
 **Properties and possible values returned by:**
 1. <b><i>ValidateEmail</b></i> method
   
@@ -9,7 +11,7 @@ The <b><i>ValidateEmail</b></i> and <b><i>GetCredit</b></i> methods return objec
 |:--- |:--- 
 address  | The email address you are validating. 
 status | Valid /Invalid /Catch-All /Unknown /Spamtrap /Abuse /DoNotMail 
-sub-status  |antispam_system /greylisted /mail_server_temporary_error /forcible_disconnect /mail_server_did_not_respond /timeout_exceeded /failed_smtp_connection /mailbox_quota_exceeded /exception_occurred /possible_traps /role_based /global_suppression /mailbox_not_found /no_dns_entries /failed_syntax_check /possible_typo /unroutable_ip_address /leading_period_removed /does_not_accept_mail
+subStatus  |antispam_system /greylisted /mail_server_temporary_error /forcible_disconnect /mail_server_did_not_respond /timeout_exceeded /failed_smtp_connection /mailbox_quota_exceeded /exception_occurred /possible_traps /role_based /global_suppression /mailbox_not_found /no_dns_entries /failed_syntax_check /possible_typo /unroutable_ip_address /leading_period_removed /does_not_accept_mail
 account | The portion of the email address before the "@" symbol.
 domain | The portion of the email address after the "@" symbol
 disposable |[true/false] If the email domain is diposable, which are usually temporary email addresses.
