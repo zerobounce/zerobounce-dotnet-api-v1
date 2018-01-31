@@ -10,11 +10,6 @@ using System.Web;
 using System.IO;
 using System.Web.Script.Serialization;
 
-//you also need
-//a getcreditbalance method
-//https://docs.zerobounce.net/docs/get-credit-balance
-//zeroBounceAPI.GetValidationResults;
-//zeroBounceAPI.GetCreditBalance;
 namespace ZeroBounce
 {
 
