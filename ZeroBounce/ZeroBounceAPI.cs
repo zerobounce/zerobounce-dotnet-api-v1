@@ -117,8 +117,8 @@ namespace ZeroBounce
             }
             catch(Exception ex)
             {
-                if (ex.Message.Contains("The operation has timed out")) oResults.subStatus = "timeout_exceeded";
-                else oResults.subStatus = "exception_occurred";
+                if (ex.Message.Contains("The operation has timed out")) oResults.sub_status = "timeout_exceeded";
+                else oResults.sub_status = "exception_occurred";
                 oResults.status = "Unknown";
                 oResults.domain = EmailToValidate.Substring(EmailToValidate.IndexOf("@") + 1).ToLower();
                 oResults.account = EmailToValidate.Substring(0, EmailToValidate.IndexOf("@")).ToLower();
