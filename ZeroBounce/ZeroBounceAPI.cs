@@ -57,7 +57,7 @@ namespace ZeroBounce
             }
         }
 
-        private int m_requestTimeOut = 0;
+        private int m_requestTimeOut = 80000;
         public int RequestTimeOut
         {
             get
@@ -70,7 +70,7 @@ namespace ZeroBounce
                 m_requestTimeOut = value;
             }
         }
-        private int m_readTimeOut = 0;
+        private int m_readTimeOut = 80000;
         public int ReadTimeOut
         {
             get
@@ -86,7 +86,6 @@ namespace ZeroBounce
         public ZeroBounceResultsModel ValidateEmail()
         {
             // secure SSL / TLS channel for different .Net versions
-            ServicePointManager.SecurityProtocol |= SecurityProtocolType.Tls;
             ServicePointManager.SecurityProtocol |= SecurityProtocolType.Tls11;
             ServicePointManager.SecurityProtocol |= SecurityProtocolType.Tls12;
 
@@ -132,7 +131,6 @@ namespace ZeroBounce
         public ZeroBounceCreditsModel GetCredits()
         {
             // secure SSL / TLS channel for different .Net versions            
-            ServicePointManager.SecurityProtocol |= SecurityProtocolType.Tls;
             ServicePointManager.SecurityProtocol |= SecurityProtocolType.Tls11;
             ServicePointManager.SecurityProtocol |= SecurityProtocolType.Tls12;
 
