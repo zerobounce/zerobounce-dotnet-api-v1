@@ -1,5 +1,5 @@
-# zerobounce-dotnet-api
-This is a .Net wrapper class example for the ZeroBounce API.<br><br>
+# zerobounce-dotnet-api-v1
+This is a .Net wrapper class example for the ZeroBounce API v1.<br><br>
 The .NET API Wrapper takes these input parameters.
 
 |<b>Property</b>|<b>Values</b> 
