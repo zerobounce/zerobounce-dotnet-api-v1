@@ -1,5 +1,5 @@
 # zerobounce-dotnet-api-v1
-This is a .Net wrapper class example for the ZeroBounce API v1.<br><br>
+This is a .Net wrapper class example for the ZeroBounce API v1.<br>
 
 Version 2 is Available here: https://github.com/zerobounce/zerobounce-dotnet-api-v2
 
