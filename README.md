@@ -4,9 +4,9 @@ The .NET API Wrapper takes these input parameters.
 
 |<b>Property</b>|<b>Values</b> 
 |:--- |:--- 
-apiKey  | Located in your account. 
+api_key  | Located in your account. 
 emailToValidate | The email address your validating. 
-ipAddress | [optional] The IP Address the email address was captured from 
+ip_address | [optional] The IP Address the email address was captured from 
 requestTimeOut | [optional] Timeout settings in milliseconds, setting this enables you to control how long you are willing to wait for to send the request to the API. When the timeout occurs an "Unknown" result is returned. 
 readTimeOut | [optional] Timeout settings in milliseconds, setting this enables you to control how long your willing to wait for the API to respond to your request. When the timeout occurs an "Unknown" result is returned.
 
