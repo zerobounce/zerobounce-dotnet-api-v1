@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System;
 using ZeroBounce.Models;
 using System.Net;
-using Newtonsoft.Json;
-using System.Web;
 using System.IO;
 using System.Web.Script.Serialization;
 
@@ -85,8 +79,12 @@ namespace ZeroBounce
         }
         public ZeroBounceResultsModel ValidateEmail()
         {
-            // secure SSL / TLS channel for different .Net versions
-            ServicePointManager.SecurityProtocol |= SecurityProtocolType.Tls11;
+            var oResults = new ZeroBounceResultsModel();
+
+            try
+            {
+                // secure SSL / TLS channel for different .Net versions
+                ServicePointManager.SecurityProtocol |= SecurityProtocolType.Tls11;
             ServicePointManager.SecurityProtocol |= SecurityProtocolType.Tls12;
 
             var apiUrl = "";
@@ -95,15 +93,14 @@ namespace ZeroBounce
             else apiUrl = "https://api.zerobounce.net/v1/validatewithip?apikey=" + ApiKey + "&email=" + System.Net.WebUtility.UrlEncode(EmailToValidate) + "&ipaddress=" + System.Net.WebUtility.UrlEncode(IpAddress);
 
             var responseString = "";
-            var oResults = new ZeroBounceResultsModel();
+           
             System.Net.HttpWebRequest request = (System.Net.HttpWebRequest)WebRequest.Create(apiUrl);
             request.Timeout = RequestTimeOut;
             request.Method = "GET";
             Console.WriteLine("Input APIKey: " + ApiKey);
           
             var serializer = new JavaScriptSerializer();
-            try
-            {
+           
                 using (WebResponse response = request.GetResponse())
                 {
                     response.GetResponseStream().ReadTimeout = ReadTimeOut;
@@ -122,8 +119,6 @@ namespace ZeroBounce
                 oResults.domain = EmailToValidate.Substring(EmailToValidate.IndexOf("@") + 1).ToLower();
                 oResults.account = EmailToValidate.Substring(0, EmailToValidate.IndexOf("@")).ToLower();
                 oResults.address = EmailToValidate.ToLower();
-
-                Console.WriteLine(ex.ToString());
                 oResults.errMsg = ex.ToString();
             }
             return oResults;
@@ -131,21 +126,26 @@ namespace ZeroBounce
         public ZeroBounceCreditsModel GetCredits()
         {
             // secure SSL / TLS channel for different .Net versions            
-            ServicePointManager.SecurityProtocol |= SecurityProtocolType.Tls11;
-            ServicePointManager.SecurityProtocol |= SecurityProtocolType.Tls12;
 
-            var apiUrl = "https://api.zerobounce.net/v1/getcredits?apikey=" + ApiKey;
-            var responseString = "";
+          
             var oResults = new ZeroBounceCreditsModel();
 
-            System.Net.HttpWebRequest request = (System.Net.HttpWebRequest)WebRequest.Create(apiUrl);
-            request.Timeout = RequestTimeOut;
-            request.Method = "GET";           
-            Console.WriteLine("APIKey: " + ApiKey);
-
-            var serializer = new JavaScriptSerializer();
             try
             {
+
+                var apiUrl = "https://api.zerobounce.net/v1/getcredits?apikey=" + ApiKey;
+                var responseString = "";
+
+                ServicePointManager.SecurityProtocol |= SecurityProtocolType.Tls11;
+                ServicePointManager.SecurityProtocol |= SecurityProtocolType.Tls12;
+
+                System.Net.HttpWebRequest request = (System.Net.HttpWebRequest)WebRequest.Create(apiUrl);
+                request.Timeout = RequestTimeOut;
+                request.Method = "GET";           
+                Console.WriteLine("APIKey: " + ApiKey);
+
+                var serializer = new JavaScriptSerializer();
+            
                 using (WebResponse response = request.GetResponse())
                 {
                     response.GetResponseStream().ReadTimeout = ReadTimeOut;
@@ -158,7 +158,6 @@ namespace ZeroBounce
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.ToString());
                 oResults.errMsg = ex.ToString();
             }
             return oResults;
