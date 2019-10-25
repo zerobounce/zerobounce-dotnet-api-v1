@@ -28,7 +28,7 @@ subStatus  |antispam_system /greylisted /mail_server_temporary_error /forcible_d
 account | The portion of the email address before the "@" symbol.
 domain | The portion of the email address after the "@" symbol
 disposable |[true/false] If the email domain is diposable, which are usually temporary email addresses.
-toxic |[true/false] These domains are known for abuse, spam, and bot created.
+toxic |[true/false] These email addresses are known for abuse, spam, and bot created.
 firstname | The first name of the owner of the email when available or [null].
 lastname  |The last name of the owner of the email when available or [null].
 gender |The gender of the owner of the email when available or [null].
